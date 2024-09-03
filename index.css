@@ -1,0 +1,320 @@
+/* Generelle stilinnstillinger */
+body {
+    background-color: #0b0d17;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7f00ff;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(26, 28, 44, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero-seksjon Styling */
+.hero {
+    background: url('your-background-image.jpg') center center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 13, 23, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: #00aaff;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0077cc;
+}
+
+/* Om Oss Styling */
+.about-us, .projects, .membership, .contact {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.about-us h2, .projects h2, .membership h2, .contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-us h2::after, .projects h2::after, .membership h2::after, .contact h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #00aaff;
+    display: block;
+    margin: 10px auto;
+}
+
+.about-us p, .projects p, .membership p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.projects .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects .project-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projects .project-item:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.membership .cta-button {
+    background-color: #7f00ff;
+}
+
+.membership .cta-button:hover {
+    background-color: #5c0099;
+}
+
+/* Kontakt Seksjon Styling */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact input, 
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00aaff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact input:focus, 
+.contact textarea:focus {
+    border-color: #7f00ff;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.contact button {
+    background-color: #00aaff;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #0077cc;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(26, 28, 44, 0.9);
+    padding: 20px 50px;
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+footer .social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+footer .social-media li {
+    margin: 0 10px;
+}
+
+footer .social-media a {
+    color: #00aaff;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #7f00ff;
+}
+
+/* Responsiv Design */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .about-us, .projects, .membership, .contact {
+        padding: 80px 30px;
+    }
+
+    .projects .project-item {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .projects .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects .project-item {
+        width: 100%;
+    }
+
+    .contact form {
+        padding: 0 10px;
+    }
+}
