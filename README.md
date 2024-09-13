@@ -21,9 +21,9 @@ Our mission is to advance the frontiers of space technology through the design, 
 - **Attend Our Events**: Check out our events calendar and join us for exciting launches and educational workshops.
 
 ## Stay Connected
-- **GitHub Pages**: [Link to project pages or documentation]
-- **Social Media**: [Link to social media]
-- **Contact Us**: [Email]
+- **Twitter**: https://x.com/Intersspace
+- **LinkedIN**:  https://www.linkedin.com/company/innterstellarspace
+- **Contact Us**: contact@interstellarspace.no
 
 ## Contributing
 We welcome contributions from students and professionals alike. If you're interested in contributing to our projects, please read through our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get started.
