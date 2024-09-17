@@ -33,8 +33,8 @@ We're excited that you're interested in contributing to InterstellarSpace! This 
 
 ## Getting Help
 If you have questions or need help with the setup, feel free to reach out via:
-- **Email-comming-soon**: [Email]
-- **Discord-comming-soon**: [Link to community chat platform]
+- **Email**: contact@interstellarspace.no
+- **Discord**: https://discord.gg/JRGwKjHC9n
 
 Thank you for your interest in contributing to InterstellarSpace! Together, we can make significant strides in space technology and exploration.
 
