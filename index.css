@@ -37,6 +37,17 @@ header {
     letter-spacing: 2px;
 }
 
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:visited,
+.logo a:hover,
+.logo a:active {
+    color: inherit;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -58,12 +69,12 @@ header {
         flex-direction: column;
         padding: 10px 20px;
     }
-    
+
     .nav-links {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .nav-links li {
         margin: 10px 0;
     }
@@ -71,7 +82,7 @@ header {
 
 /* Hero-seksjon Styling */
 .hero {
-    background: url('Satellitte (1).jpg') center center/cover no-repeat;
+    background: url('satellitte.jpg') center center/cover no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -193,7 +204,7 @@ header {
     font-weight: bold;
 }
 
-.contact input, 
+.contact input,
 .contact textarea {
     width: 100%;
     padding: 10px;
@@ -206,7 +217,7 @@ header {
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.contact input:focus, 
+.contact input:focus,
 .contact textarea:focus {
     border-color: #7f00ff;
     background-color: rgba(255, 255, 255, 0.2);
@@ -318,6 +329,7 @@ footer .social-media a:hover {
         padding: 0 10px;
     }
 }
+
 /* Fade-in Effekt for Seksjoner */
 section {
     opacity: 0;
@@ -358,4 +370,3 @@ section.in-view {
     font-size: 1.1em;
     line-height: 1.8;
 }
-
