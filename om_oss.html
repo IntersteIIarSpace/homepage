@@ -5,68 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InterstellarSpace</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/icon" href="dsp.webp">
 </head>
-<body>
-<header>
-    <nav>
+<body class="bg-[#0b0d17] text-white font-roboto">
+<!-- Navbar -->
+<header class="bg-[#1a1c2c] bg-opacity-90 fixed w-full z-10">
+    <nav class="flex items-center justify-between p-5">
         <div class="logo">
-            <h1>InterstellarSpace</h1>
+            <a href="index.html" class="text-2xl font-bold tracking-widest">InterstellarSpace</a>
         </div>
-        <ul class="nav-links">
-            <li><a href="#vår-historie">Om Oss</a></li>
-            <li><a href="index.html#prosjekter">Prosjekter</a></li>
-            <li><a href="index.html#medlemskap">Medlemskap</a></li>
-            <li><a href="index.html#kontakt">Kontakt</a></li>
+
+        <!-- Hamburger Icon for Mobile -->
+        <div class="md:hidden">
+            <button id="hamburger" class="text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Links (Hidden on mobile by default) -->
+        <ul id="nav-links" class="hidden md:flex space-x-8 items-center">
+            <li><a href="#vår-historie" class="hover:text-[#7f00ff]">Om Oss</a></li>
+            <li><a href="index.html#prosjekter" class="hover:text-[#7f00ff]">Prosjekter</a></li>
+            <li><a href="index.html#medlemskap" class="hover:text-[#7f00ff]">Medlemskap</a></li>
+            <li><a href="index.html#kontakt" class="hover:text-[#7f00ff]">Kontakt</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile Menu (Hidden initially, will expand when hamburger is clicked) -->
+    <ul id="mobile-menu" class="mobile-menu flex-col bg-[#1a1c2c] bg-opacity-90 md:hidden overflow-hidden max-h-0">
+        <li><a href="#vår-historie" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Om Oss</a></li>
+        <li><a href="index.html#prosjekter" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Prosjekter</a></li>
+        <li><a href="index.html#medlemskap" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Medlemskap</a></li>
+        <li><a href="index.html#kontakt" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Kontakt</a></li>
+    </ul>
 </header>
 
-<section id="vår-historie" class="section-padding">
-    <h2>Vår Historie</h2>
-    <p>InterstellarSpace ble grunnlagt i august 2024 av en gruppe lidenskapelige studenter med en felles interesse for
-        romfartsteknologi. Vårt mål er å bygge satellitter og etter hvert raketter for å fremme læring og
-        teknologiutvikling blant studenter.</p>
+
+<section id="vår-historie" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-5">Vår Historie</h2>
+    <p class="max-w-xl mx-auto">InterstellarSpace ble grunnlagt i august 2024 av en gruppe lidenskapelige studenter med en felles interesse for romfartsteknologi. Vårt mål er å bygge satellitter og etter hvert raketter for å fremme læring og teknologiutvikling blant studenter.</p>
 </section>
 
-<section id="vårt-team" class="section-padding">
-    <h2>Vårt Team</h2>
-    <p>Vi er et team av over 10 medlemmer, alle med forskjellige ferdigheter innenfor ingeniørfag, fysikk, datavitenskap
-        og mer. Vi jobber sammen for å realisere våre ambisiøse prosjekter.</p>
+<section id="vårt-team" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-5">Vårt Team</h2>
+    <p class="max-w-xl mx-auto">Vi er et team av over 10 medlemmer, alle med forskjellige ferdigheter innenfor ingeniørfag, fysikk, datavitenskap og mer. Vi jobber sammen for å realisere våre ambisiøse prosjekter.</p>
 </section>
 
-<section id="våre-verdier" class="section-padding">
-    <h2>Våre Verdier</h2>
-    <p>Hos InterstellarSpace verdsetter vi samarbeid, innovasjon, og læring. Vi tror på kraften av å dele kunnskap og
-        inspirere neste generasjon av ingeniører og forskere.</p>
+<section id="våre-verdier" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-5">Våre Verdier</h2>
+    <p class="max-w-xl mx-auto">Vi verdsetter samarbeid, innovasjon og læring. Vårt miljø oppmuntrer medlemmer til å være nysgjerrige og utforske nye ideer mens vi arbeider mot felles mål.</p>
 </section>
 
-<section id="medlemskap" class="membership">
-    <h2>Bli Medlem</h2>
-    <p>Er du fascinert av romfartsteknologi? Bli en del av InterstellarSpace og delta i banebrytende prosjekter hvor du
-        kan bidra til å drive frem utviklingen av satellittteknologi.</p>
-    <a href="https://forms.gle/TqTz2gBA6Yz6saNX9" class="cta-button">Bli medlem her!</a>
-</section>
-<section id="kontakt" class="contact">
-    <h2>Kontakt Oss</h2>
-    <p>
-        <a href="mailto:contact@interstellarspace.no">Send oss en e-post</a>
-    </p>
-    <p>
-        contact@interstellarspace.no
-    </p>
-</section>
-<footer>
+<footer class="bg-[#1a1c2c] text-center p-6">
     <p>&copy; 2024 InterstellarSpace. Alle rettigheter reservert.</p>
-    <ul class="social-media">
-        <li><a href="https://www.facebook.com/profile.php?id=61565442637014">Facebook</a></li>
-        <li><a href="https://www.instagram.com/interstellarspace6/">Instagram</a></li>
-        <li><a href="https://x.com/Intersspace">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/company/innterstellarspace/">LinkedIn</a></li>
+    <ul class="flex justify-center space-x-4 mt-4">
+        <li><a href="https://www.facebook.com/profile.php?id=61565442637014" class="hover:text-[#7f00ff]">Facebook</a></li>
+        <li><a href="https://www.instagram.com/interstellarspace6/" class="hover:text-[#7f00ff]">Instagram</a></li>
+        <li><a href="https://x.com/Intersspace" class="hover:text-[#7f00ff]">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/company/innterstellarspace/" class="hover:text-[#7f00ff]">LinkedIn</a></li>
     </ul>
 </footer>
 
-<script src="index.js"></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle the max height between 0 and 500px for the mobile menu
+        if (mobileMenu.classList.contains('max-h-0')) {
+            mobileMenu.classList.remove('max-h-0');
+            mobileMenu.classList.add('max-h-96');  // Arbitrary height that fits the menu items
+        } else {
+            mobileMenu.classList.add('max-h-0');
+            mobileMenu.classList.remove('max-h-96');
+        }
+    });
+</script>
 </body>
 </html>

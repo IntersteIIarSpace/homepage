@@ -5,72 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InterstellarSpace</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/icon" href="dsp.webp">
 </head>
-<body>
-<header>
-    <nav>
+<body class="bg-[#0b0d17] text-white font-roboto">
+<style>
+    section {
+        opacity: 0;
+        transform: translateY(20px);  /* Initial position for slide-up effect */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.in-view {
+        opacity: 1;
+        transform: translateY(0);  /* Slide into original position */
+    }
+</style>
+
+<!-- Navbar -->
+<header class="bg-[#1a1c2c] bg-opacity-90 fixed w-full z-10">
+    <nav class="flex items-center justify-between p-5">
         <div class="logo">
-            <a href="index.html">
-                <h1>InterstellarSpace</h1>
-            </a>
+            <a href="index.html" class="text-2xl font-bold tracking-widest">InterstellarSpace</a>
         </div>
-        <ul class="nav-links">
-            <li><a href="om_oss.html">Om Oss</a></li>
-            <li><a href="#prosjekter">Prosjekter</a></li>
-            <li><a href="#medlemskap">Medlemskap</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+
+        <!-- Hamburger Icon for Mobile -->
+        <div class="md:hidden">
+            <button id="hamburger" class="text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Links (Hidden on mobile by default) -->
+        <ul id="nav-links" class="hidden md:flex space-x-8 items-center">
+            <li><a href="om_oss.html" class="hover:text-[#7f00ff]">Om Oss</a></li>
+            <li><a href="#prosjekter" class="hover:text-[#7f00ff]">Prosjekter</a></li>
+            <li><a href="#medlemskap" class="hover:text-[#7f00ff]">Medlemskap</a></li>
+            <li><a href="#kontakt" class="hover:text-[#7f00ff]">Kontakt</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile Menu (Hidden initially, will expand when hamburger is clicked) -->
+    <ul id="mobile-menu" class="mobile-menu flex-col bg-[#1a1c2c] bg-opacity-90 md:hidden overflow-hidden max-h-0">
+        <li><a href="om_oss.html" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Om Oss</a></li>
+        <li><a href="#prosjekter" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Prosjekter</a></li>
+        <li><a href="#medlemskap" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Medlemskap</a></li>
+        <li><a href="#kontakt" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Kontakt</a></li>
+    </ul>
 </header>
-<section class="hero">
-    <div class="hero-content">
-        <h2>Utforsk Universet med Oss</h2>
-        <p>Vi er en studentorganisasjon dedikert til å bygge satellitter og raketter. Bli med oss på denne spennende
-            reisen til verdensrommet!</p>
-        <a href="om_oss.html" class="cta-button">Om oss</a>
+
+<section class="hero relative flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('satellitte.jpg');">
+    <div class="absolute inset-0 bg-black opacity-70"></div>
+    <div class="relative z-10 text-center px-4">
+        <h2 class="text-4xl md:text-5xl font-bold mb-5">Utforsk Universet med Oss</h2>
+        <p class="max-w-2xl mx-auto mb-8">Vi er en studentorganisasjon dedikert til å bygge satellitter og raketter. Bli med oss på denne spennende reisen til verdensrommet!</p>
+        <a href="om_oss.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full">Om oss</a>
     </div>
 </section>
-<section id="prosjekter" class="projects">
-    <h2>Våre Prosjekter</h2>
-    <div class="project-list">
-        <div class="project-item">
-            <h3>Satellittprosjekt</h3>
-            <p>Vi jobber for tiden med å utvikle vår første satellitt. Dette prosjektet gir studentene hands-on erfaring
-                med romteknologi.</p>
+
+<section id="prosjekter" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-10">Våre Prosjekter</h2>
+    <div class="grid gap-6 md:grid-cols-2 px-6">
+        <div class="bg-gray-800 bg-opacity-30 p-6 rounded-lg hover:bg-opacity-50 transition">
+            <h3 class="text-xl font-bold mb-3">Satellittprosjekt</h3>
+            <p>Vi jobber for tiden med å utvikle vår første satellitt. Dette prosjektet gir studentene hands-on erfaring med romteknologi.</p>
         </div>
-        <div class="project-item">
-            <h3>Propulsjonssystem</h3>
-            <p>Vårt langsiktige mål er å bygge en satellitt med et avansert propulsjonssystem. Dette vil utfordre våre
-                medlemmer til å kombinere teori og praksis på nye måter.</p>
+        <div class="bg-gray-800 bg-opacity-30 p-6 rounded-lg hover:bg-opacity-50 transition">
+            <h3 class="text-xl font-bold mb-3">Propulsjonssystem</h3>
+            <p>Vårt langsiktige mål er å bygge en satellitt med et avansert propulsjonssystem. Dette vil utfordre våre medlemmer til å kombinere teori og praksis på nye måter.</p>
         </div>
     </div>
 </section>
-<section id="medlemskap" class="membership">
-    <h2>Bli Medlem</h2>
-    <p>Er du fascinert av romfartsteknologi? Bli en del av InterstellarSpace og delta i banebrytende prosjekter hvor du
-        kan bidra til å drive frem utviklingen av satellittteknologi.</p>
-    <a href="https://forms.gle/TqTz2gBA6Yz6saNX9" class="cta-button">Bli medlem her!</a>
+
+<section id="medlemskap" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-5">Bli Medlem</h2>
+    <p class="max-w-xl mx-auto mb-8">Er du fascinert av romfartsteknologi? Bli en del av InterstellarSpace og delta i banebrytende prosjekter hvor du kan bidra til å drive frem utviklingen av satellittteknologi.</p>
+    <a href="https://forms.gle/TqTz2gBA6Yz6saNX9" class="bg-purple-600 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded-full">Bli medlem her!</a>
 </section>
-<section id="kontakt" class="contact">
-    <h2>Kontakt Oss</h2>
-    <p>
-        <a href="mailto:contact@interstellarspace.no">Send oss en e-post</a>
-    </p>
-    <p>
-        contact@interstellarspace.no
-    </p>
+
+<section id="kontakt" class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-5">Kontakt Oss</h2>
+    <p><a href="mailto:contact@interstellarspace.no" class="hover:text-blue-400">Send oss en e-post</a></p>
+    <p class="mt-2">contact@interstellarspace.no</p>
 </section>
-<footer>
+
+<footer class="bg-[#1a1c2c] text-center p-6">
     <p>&copy; 2024 InterstellarSpace. Alle rettigheter reservert.</p>
-    <ul class="social-media">
-        <li><a href="https://www.facebook.com/profile.php?id=61565442637014">Facebook</a></li>
-        <li><a href="https://www.instagram.com/interstellarspace6/">Instagram</a></li>
-        <li><a href="https://x.com/Intersspace">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/company/innterstellarspace/">LinkedIn</a></li>
+    <ul class="flex justify-center space-x-4 mt-4">
+        <li><a href="https://www.facebook.com/profile.php?id=61565442637014" class="hover:text-[#7f00ff]">Facebook</a></li>
+        <li><a href="https://www.instagram.com/interstellarspace6/" class="hover:text-[#7f00ff]">Instagram</a></li>
+        <li><a href="https://x.com/Intersspace" class="hover:text-[#7f00ff]">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/company/innterstellarspace/" class="hover:text-[#7f00ff]">LinkedIn</a></li>
     </ul>
 </footer>
-<script src="index.js"></script>
+
+<!-- JavaScript for Hamburger Menu Toggle -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle the max height between 0 and 500px for the mobile menu
+        if (mobileMenu.classList.contains('max-h-0')) {
+            mobileMenu.classList.remove('max-h-0');
+            mobileMenu.classList.add('max-h-96');  // Arbitrary height that fits the menu items
+        } else {
+            mobileMenu.classList.add('max-h-0');
+            mobileMenu.classList.remove('max-h-96');
+        }
+    });
+
+    // "Fancy" animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {threshold: 0.1});
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
