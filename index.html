@@ -7,9 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/icon" href="logo.webp">
+    <script src="https://kit.fontawesome.com/349d94cd8c.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-[#0b0d17] text-white font-roboto">
+
+<body class="bg-[#1a1a1a] text-white font-roboto ">
+
 <style>
+    
     section {
         opacity: 0;
         transform: translateY(20px);  /* Initial position for slide-up effect */
@@ -19,14 +23,50 @@
         opacity: 1;
         transform: translateY(0);  /* Slide into original position */
     }
+
+    .titles {
+        font-weight: 900;
+        font-style: italic;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* Simple animation for "floating" effect on logo */
+    @keyframes floatAround {
+        0% {
+            transform: translate(-50%, -50%) translateY(0) translateX(0);
+        }
+        25% {
+            transform: translate(-50%, -50%) translateY(-5px) translateX(3px);
+        }
+        50% {
+            transform: translate(-50%, -50%) translateY(5px) translateX(-3px);
+        }
+        75% {
+            transform: translate(-50%, -50%) translateY(-3px) translateX(2px);
+        }
+        100% {
+            transform: translate(-50%, -50%) translateY(0) translateX(0);
+        }
+    }
+    .animate-float {
+        animation: floatAround 12s ease-in-out infinite;
+    }
+
+
+
 </style>
 
 <!-- Navbar -->
-<header class="bg-[#1a1c2c] bg-opacity-90 fixed w-full z-10">
+<header class="bg-[#0d0d0d] bg-opacity-90 fixed w-full z-10">
     <nav class="flex items-center justify-between p-5">
-        <div class="logo">
-            <a href="index.html" class="text-2xl font-bold tracking-widest">InterstellarSpace</a>
+        <div class="logo flex items-center space-x-2">
+            <img src="logopng.png" alt="InterstellarSpace logo" class="h-10 w-auto" />
+            <div class="flex space-x-1">
+                <a href="index.html" class="text-2xl text-[#9beaf2] titles tracking-widest">INTERSTELLAR</a>
+                <a href="index.html" class="text-2xl text-[#f2f2f2] titles tracking-widest">SPACE</a>
+            </div>
         </div>
+
 
         <!-- Hamburger Icon for Mobile -->
         <div class="md:hidden">
@@ -39,64 +79,104 @@
 
         <!-- Menu Links (Hidden on mobile by default) -->
         <ul id="nav-links" class="hidden md:flex space-x-8 items-center">
-            <li><a href="om_oss.html" class="hover:text-[#7f00ff]">Om Oss</a></li>
-            <li><a href="#prosjekter" class="hover:text-[#7f00ff]">Prosjekter</a></li>
-            <li><a href="#medlemskap" class="hover:text-[#7f00ff]">Medlemskap</a></li>
-            <li><a href="#kontakt" class="hover:text-[#7f00ff]">Kontakt</a></li>
+            <li><a href="om_oss.html" class="hover:text-[#9beaf2] titles transition-colors duration-200">Om Oss</a></li>
+            <li><a href="#prosjekter" class="hover:text-[#9beaf2] titles transition-colors duration-200">Prosjekter</a></li>
+            <li><a href="#medlemskap" class="hover:text-[#9beaf2] titles transition-colors duration-200">Medlemskap</a></li>
+            <li><a href="#kontakt" class="hover:text-[#9beaf2] titles transition-colors duration-200">Kontakt</a></li>
         </ul>
     </nav>
 
     <!-- Mobile Menu (Hidden initially, will expand when hamburger is clicked) -->
     <ul id="mobile-menu" class="mobile-menu flex-col bg-[#1a1c2c] bg-opacity-90 md:hidden overflow-hidden max-h-0">
-        <li><a href="om_oss.html" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Om Oss</a></li>
-        <li><a href="#prosjekter" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Prosjekter</a></li>
-        <li><a href="#medlemskap" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Medlemskap</a></li>
-        <li><a href="#kontakt" class="block py-2 px-4 text-white hover:text-[#7f00ff]">Kontakt</a></li>
+        <li><a href="om_oss.html" class="block py-2 px-4 text-white hover:text-[#9beaf2] titles ">Om Oss</a></li>
+        <li><a href="#prosjekter" class="block py-2 px-4 text-white hover:text-[#9beaf2] titles">Prosjekter</a></li>
+        <li><a href="#medlemskap" class="block py-2 px-4 text-white hover:text-[#9beaf2] titles">Medlemskap</a></li>
+        <li><a href="#kontakt" class="block py-2 px-4 text-white hover:text-[#9beaf2] titles">Kontakt</a></li>
     </ul>
 </header>
 
 <section class="hero relative flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('satellitte.jpg');">
+    
     <div class="absolute inset-0 bg-black opacity-70"></div>
+
+    <img src="logopng.png" alt="Logo"
+         class="absolute top-1/2 left-1/2 h-[800px] md:h-[1000px] lg:h-[1200px] opacity-10 z-0 animate-float" />
+
+
     <div class="relative z-10 text-center px-4">
-        <h2 class="text-4xl md:text-5xl font-bold mb-5">Utforsk Universet med Oss</h2>
-        <p class="max-w-2xl mx-auto mb-8">Vi er en studentorganisasjon dedikert til å bygge satellitter og raketter. Bli med oss på denne spennende reisen til verdensrommet!</p>
-        <a href="om_oss.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full">Om oss</a>
+        <h2 class="text-4xl md:text-5xl font-bold h2-font mb-5">Utforsk Universet med Oss</h2>
+        <p class="max-w-2xl mx-auto mb-8 p-font">Vi er en studentorganisasjon dedikert til å bygge satellitter og raketter. Bli med oss på denne spennende reisen til verdensrommet!</p>
+        <a href="om_oss.html" class="bg-[#9beaf2] text-[#f2f2f2] font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:opacity-70 hover:scale-105">Om oss</a>
     </div>
 </section>
+
+
 
 <section id="prosjekter" class="py-20 text-center">
     <h2 class="text-3xl font-bold mb-10">Våre Prosjekter</h2>
     <div class="grid gap-6 md:grid-cols-2 px-6">
-        <div class="bg-gray-800 bg-opacity-30 p-6 rounded-lg hover:bg-opacity-50 transition">
-            <h3 class="text-xl font-bold mb-3">Satellittprosjekt</h3>
-            <p>Vi jobber for tiden med å utvikle vår første satellitt. Dette prosjektet gir studentene hands-on erfaring med romteknologi.</p>
+
+        <div class="group relative bg-[#0d0d0d] bg-opacity-30 p-6 rounded-lg hover:bg-[#9beaf2] hover:bg-opacity-30 transition-colors duration-300 overflow-hidden">
+            
+            <div class="absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 text-[8rem] transition-opacity duration-500 pointer-events-auto select-none">
+                🛰️
+            </div>
+            
+            <h3 class="text-xl font-bold mb-3 relative z-10">Satellittprosjekt</h3>
+            <p class="relative z-10">Vi jobber for tiden med å utvikle vår første satellitt. Dette prosjektet gir studentene hands-on erfaring med romteknologi.</p>
         </div>
-        <div class="bg-gray-800 bg-opacity-30 p-6 rounded-lg hover:bg-opacity-50 transition">
-            <h3 class="text-xl font-bold mb-3">Propulsjonssystem</h3>
-            <p>Vårt langsiktige mål er å bygge en satellitt med et avansert propulsjonssystem. Dette vil utfordre våre medlemmer til å kombinere teori og praksis på nye måter.</p>
+
+        <div class="group relative bg-[#0d0d0d] bg-opacity-30 p-6 rounded-lg hover:bg-[#9beaf2] hover:bg-opacity-30 transition-colors duration-300 overflow-hidden">
+
+            <div class="absolute inset-0 flex items-center justify-center opacity-20 hover:opacity-40 text-[8rem] transition-opacity duration-500 pointer-events-auto select-none">
+                🚀
+            </div>
+
+            <h3 class="text-xl font-bold mb-3 relative z-10">Propulsjonssystemt</h3>
+            <p class="relative z-10">Vårt langsiktige mål er å bygge en satellitt med et avansert propulsjonssystem. Dette vil utfordre våre medlemmer til å kombinere teori og praksis på nye måter.</p>
         </div>
     </div>
+        
 </section>
 
 <section id="medlemskap" class="py-20 text-center">
     <h2 class="text-3xl font-bold mb-5">Bli Medlem</h2>
     <p class="max-w-xl mx-auto mb-8">Er du fascinert av romfartsteknologi? Bli en del av InterstellarSpace og delta i banebrytende prosjekter hvor du kan bidra til å drive frem utviklingen av satellittteknologi.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrhQZXTDJqG3xU6fML2jfMN1YJ6Q1bLLBNj0O1lVVKyk4qLg/viewform" class="bg-purple-600 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded-full">Bli medlem her!</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrhQZXTDJqG3xU6fML2jfMN1YJ6Q1bLLBNj0O1lVVKyk4qLg/viewform" class="bg-[#9beaf2] opacity-100 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:opacity-70 hover:scale-105">Bli medlem her!</a>
 </section>
 
 <section id="kontakt" class="py-20 text-center">
     <h2 class="text-3xl font-bold mb-5">Kontakt Oss</h2>
-    <p><a href="mailto:contact@interstellarspace.no" class="hover:text-blue-400">Send oss en e-post</a></p>
+    <p><a href="mailto:contact@interstellarspace.no" class="hover:text-[#9beaf2]">Send oss en e-post</a></p>
+    
     <p class="mt-2">interstellarspace.contact@gmail.com</p>
+    <br>
+    <p class="font-bold">Eller finn oss på sosiale medier</p>
+    <div class="flex justify-center gap-4 mt-6 text-5xl flex space-x-4">
+        <a href="https://www.facebook.com/profile.php?id=61565442637014" class="text-blue-500 hover:text-blue-700">
+            <i class="fab fa-facebook-f "></i>
+        </a>
+        <a href="https://www.instagram.com/interstellarspace6/" class="text-pink-500 hover:text-pink-700">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/Intersspace" class="text-black hover:text-gray-700">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/innterstellarspace/" class="text-blue-300 hover:text-blue-500">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
+
 </section>
 
-<footer class="bg-[#1a1c2c] text-center p-6">
+<footer class="bg-[#0d0d0d] text-center p-6">
     <p>&copy; 2024 InterstellarSpace. Alle rettigheter reservert.</p>
     <ul class="flex justify-center space-x-4 mt-4">
-        <li><a href="https://www.facebook.com/profile.php?id=61565442637014" class="hover:text-[#7f00ff]">Facebook</a></li>
-        <li><a href="https://www.instagram.com/interstellarspace6/" class="hover:text-[#7f00ff]">Instagram</a></li>
-        <li><a href="https://x.com/Intersspace" class="hover:text-[#7f00ff]">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/company/innterstellarspace/" class="hover:text-[#7f00ff]">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61565442637014" class="hover:text-[#9beaf2] transition-colors duration-200">Facebook</a></li>
+        <li><a href="https://www.instagram.com/interstellarspace6/" class="hover:text-[#9beaf2] transition-colors duration-200">Instagram</a></li>
+        <li><a href="https://x.com/Intersspace" class="hover:text-[#9beaf2] transition-colors duration-200">X</a></li>
+        <li><a href="https://www.linkedin.com/company/innterstellarspace/" class="hover:text-[#9beaf2] transition-colors duration-200">LinkedIn</a></li>
     </ul>
 </footer>
 
